@@ -1,0 +1,44 @@
+<div>
+    <h3>Employee List</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Job Title</th>
+          <th>Age</th>
+          <th>Start Date</th>
+          <th>End Date </th>
+          <th>Actions <button class="button-icon" (click)="addUser()"><i class="fa fa-user-plus"  aria-hidden="true"></i></button></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+            <td></td>
+            <td><input type="text" [(ngModel)]="nameFilter" placeholder="Search by name"></td>
+            <td><input type="text" [(ngModel)]="designationFilter" placeholder=""></td>
+            <td><input type="text" [(ngModel)]="ageFilter" placeholder="Age"></td>
+            <td><input type="date" [(ngModel)]="startDateFilter" placeholder="Filter"></td>
+            <td><input type="date" [(ngModel)]="endDateFilter" placeholder="Filter"></td>
+            <td><button class="button-icon" (click)="filteredEmployees();"><i class="fa fa-filter" ></i></button>&nbsp;
+                <button class="button-icon" (click)="clearFilters()"><i class="fa fa-times" aria-hidden="true"></i></button></td>
+          </tr>
+        <tr *ngFor="let employee of employees;let i=index;">
+            <td>{{i+1}}</td>
+          <td>{{ employee.name }}</td>
+          <td>{{employee.designation}}</td>
+          <td>{{employee.age}}</td>
+          <td>{{ employee.startDate | date: 'shortDate' }}</td>
+          <td>{{ (employee.endDate |date: 'shortDate') ? (employee.endDate |date: 'shortDate') : 'Currently Working' }}</td>
+          <td><button class="button-icon" (click)="callAddEmployee(employee,true)"><i class="fa fa-eye" aria-hidden="true"></i></button>&nbsp;
+            <button class="button-icon" (click)="deleteEmployee(employee.id)"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+        </tr>
+      </tbody>
+    </table>
+
+<div *ngIf="showDialog">
+    <addemp  (employeeObj)="addEmployee($event)" (closeDialog)="closeDialog($event)" #addempref>
+
+    </addemp>
+</div>
+   

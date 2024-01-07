@@ -1,1 +1,72 @@
 /* You can add global styles to this file, and also import other style files */
+/* style.css */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+   
+    text-align: left;
+    padding: 8px;
+    border:none
+  }
+  
+ 
+  
+  input {
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .popup {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  h3{
+    text-align: center;
+    color: blue;
+  }
+  .button-icon{
+    background: blue;
+    border: 1px solid blue;
+    border-radius: 5px;
+    color: white;
+
+  }
+  .headRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    
+    padding: 10px 0px; /* Add padding for better visibility */
+    
+  }
+  h2{
+    margin: 0;
+    align-self: flex-start;
+    color: blue;
+  }
+  .crossBtn{
+    align-self: flex-end;
+  }
+  input{
+    border: 1px solid rgb(221, 205, 205);
+  }
